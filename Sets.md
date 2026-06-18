@@ -10,3 +10,5 @@ print(type(cars)) # will print set
 ```
 
 Values can be added with `.add()`
+
+Values can be removed with `.remove()`
