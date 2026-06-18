@@ -1,6 +1,6 @@
 In [[Python]], sets are much like [[Lists]] but they are unorderedand must be unique (no duplicate values.)
 
-Sets use curly brackets.
+Sets use curly brackets (the ones [[Dictionaries]] user)
 
 ```python
 
