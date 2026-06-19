@@ -23,3 +23,7 @@ leaving them empty just sets to nothing.
 e.g:
 
 `chmod u=rwx,g=,o= DIRECTORY_PATH`
+
+**You can also toggle execution ability (for [[shell scripts]] for e.g)** by using: 
+
+`chmod -x FILE_PATH`
