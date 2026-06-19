@@ -46,3 +46,11 @@ students: dict[str, int] = {
 	"John": 88
 }
 ```
+
+### [[Tuple]] Hints
+
+Tuples are fixed so each index of one actually has a meaning.
+
+```python
+item_stat: tuple[str, float] = ("Dogecoin", 0.57)
+```
