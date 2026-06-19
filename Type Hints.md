@@ -31,3 +31,18 @@ You can also add type hints to lists and sets.
 ```python
 my_list: list[str] = ["the", "words", "and", "stuff"]
 ```
+
+### Dictionary Hints
+
+You can also do type hints to dictionaries by specifying type for key AND value.
+
+e.g:
+
+```python
+# test scores example
+students: dict[str, int] = {
+	"Ben": 81,
+	"Matthew": 95,
+	"John": 88
+}
+```
