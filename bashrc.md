@@ -7,3 +7,5 @@ echo "Hello World"
 ```
 
 in the file will show it all the time upon startup.
+
+Bashrc is a [[Linux Commands | Linux Command]] 
