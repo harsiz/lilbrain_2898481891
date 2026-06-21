@@ -38,8 +38,18 @@ Syntax: `git cat-file -p [FULL hash]`
 -  `-p` means "pretty print". It's a mandated argument.
 - `[FULL hash]` is just the full commit hash, no need to separate first 2 chars.
 
+## Git Config
+
+`git config` is self explanatory. Configure git settings.
+-  Local vs global? `--local` is for just your repository whereas `--global` is repository agnostic and stored in `~/.gitconfig` file (key `~`, so root.)
+
+`git config set user.name` sets username
+`git config set user.email` sets email
+`git config unset [blah blah]` unsets the keypair (removes it basically)
+`git config list` lists all key pairs
+
+`git config unset --all [blah blah]` removes ALL matches to keypair (as one key can have numerous values in Git for some reason)
 
 
 
-
-See More: [[GitHub]], [[Linux]]
+See More: [[GitHub]], [[Linux Commands]]
