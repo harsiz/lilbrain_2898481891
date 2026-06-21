@@ -18,6 +18,8 @@ There are 3 stages that files are in while using git.
  -  Ontop of that, you can truncate results if a lot of commits have been made using `git --no pager log -n [number]`
  - `--no-pager` means no interactive cli where u can scroll thru
    `-n` just the number of the most recent commits
+ - `--graph` shows a cool ASCII graph that is.. not very readable
+ - `--oneline` simplifies the long `git log` into a truncated "mini version" which is much easier to read.
 
 `git add <file>` >> adds the file's recent changes so that it is staged and ready to be commited.
 
@@ -65,5 +67,11 @@ Older code may use `git checkout new_branch` for switching. It effectively does 
 `git branch` lists all current branches while highlighting the one you are currently in.
 
 `git branch -d new_branch` deletes the branch referenced.
+
+## Git Merging
+
+Along with branches, upon finishing whatever you needed the branch for: (e.g: fixed the bug / implemented the change) you can merge the code into a different (usually main) branch.
+
+`git merge new_branch` merges the referenced branch (in this case it is `new_branch`) to the current branch that you are in. This means you'd need to `git switch main` first before merging another branch to main.
 
 See More: [[GitHub]], [[Linux Commands]]
