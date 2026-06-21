@@ -1,5 +1,7 @@
 Git is a [[version control]] system for code created by Linus Torvalds (the lead developer of [[Linux]] kernel.)
 
+To initialise Git in your repository, you use `git init` in the current directory.
+
 Some good commands to know:
 
 
@@ -11,6 +13,8 @@ There are 3 stages that files are in while using git.
 **Staged:** The file IS part of Git's version control BUT no changes have been committed to a git repo yet.
 
 **Committed**: The file has been committed (appended) to a Git repo.
+
+You can use `git status` to track what files have been staged but not committed and untracked.
 
 ## Commands:
 
@@ -73,5 +77,32 @@ Older code may use `git checkout new_branch` for switching. It effectively does 
 Along with branches, upon finishing whatever you needed the branch for: (e.g: fixed the bug / implemented the change) you can merge the code into a different (usually main) branch.
 
 `git merge new_branch` merges the referenced branch (in this case it is `new_branch`) to the current branch that you are in. This means you'd need to `git switch main` first before merging another branch to main.
+
+## Git Remotes
+
+When handling a Git repository that multiple people are editing, you would use a central codebase as the "source of truth". This is pretty much just the main codebase that is the most _legitimate_ one, so you pull from there and push your new code to there.
+
+Firstly, you need to make sure you set a remote.
+
+`git remote add origin https://github.com/harsiz/my_repo.git` >> let's break this down.
+-  `git remote add` just specifies that we are adding a new remote to our repository
+
+-  `origin` is the name that we will assign the long url to. This is just so when I am typing `git pull` or `git push` I don't need to faff about `git pull https://blahblah` as `origin` is set to be the long url. It's for convenience (i dont wanna type it out all the time).
+
+-  `https://github.com/[username]/[repository].git` is the URL where the stuff is hosted. This can be a legitimate url (like the GitHub example) or actually just another directory on your device.
+
+Once your remote is set up, you can **pull** (get code) and **push** (upload code) to the main repository.
+
+Example:
+
+`git pull origin main` is just the command saying: 
+	- "please get all the most recent code from the remote I called origin and only from the main branch then merge the changes with my local repo"
+
+`git push origin main` is around the same but for pushing data:
+	- "please push my `main` branch in my LOCAL repository into the main repository for all other devs."
+
+It also doesn't have to be "main", neither does the remote have to be called "origin". It's just convention (what most devs call it) so you can call it whatever for your own private repositories, just make sure when collaborating you call it stuff like this to not confuse other developers.
+
+
 
 See More: [[GitHub]], [[Linux Commands]]
