@@ -37,3 +37,9 @@ You can also use `git cat-file` which just accurately concatenates the file for 
 Syntax: `git cat-file -p [FULL hash]`
 -  `-p` means "pretty print". It's a mandated argument.
 - `[FULL hash]` is just the full commit hash, no need to separate first 2 chars.
+
+
+
+
+
+See More: [[GitHub]], [[Linux]]
