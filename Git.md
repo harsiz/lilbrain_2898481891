@@ -50,6 +50,20 @@ Syntax: `git cat-file -p [FULL hash]`
 
 `git config unset --all [blah blah]` removes ALL matches to keypair (as one key can have numerous values in Git for some reason)
 
+## Git Branches
 
+With git, there isn't just a singular branch. For multiple people using Git, or when fixing / testing certain features on a codebase WITHOUT altering the main one, you tend to use a _new branch_ where you fix the bug / add the feature BEFORE "merging" it to the `main` or `master` branch (whatever the default branch is).
+
+`git branch new_branch` >> creates a new branch (assuming the branch hasn't been made yet). This DOES NOT switch to the new branch, so **DONT USE THIS**. It isn't deprecated or anything. It is just better not to.
+
+The _better_ alternative is: `git switch -c new_branch` which creates a new branch and moves / switches into it.
+
+On that note, there is also just `git switch new_branch` which switches into a new branch without creating one if it doesn't exist. This can also be used.
+
+Older code may use `git checkout new_branch` for switching. It effectively does the same thing as `git switch` while remaining a bit weirder to remember and doesn't support `-c`.
+
+`git branch` lists all current branches while highlighting the one you are currently in.
+
+`git branch -d new_branch` deletes the branch referenced.
 
 See More: [[GitHub]], [[Linux Commands]]
