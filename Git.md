@@ -19,7 +19,7 @@ There are 3 stages that files are in while using git.
  - `--no-pager` means no interactive cli where u can scroll thru
    `-n` just the number of the most recent commits
  - `--graph` shows a cool ASCII graph that is.. not very readable
- - `--oneline` simplifies the long `git log` into a truncated "mini version" which is much easier to read.
+ - `--oneline` simplifies the long `git log` into a truncated "mini version" which is much easier to read. (Usually you'd be using `git log --oneline` instead of traditional `git log` unless you explicitly need the full [[SHA-2]] hash.)
 
 `git add <file>` >> adds the file's recent changes so that it is staged and ready to be commited.
 
