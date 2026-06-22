@@ -85,4 +85,27 @@ myPokemon.change_damage(5) # this will work as it's just calling a method
 myPokemon.__damage_multiplier = 4 # this will NOT work as the value is private and it will raise an error
 ```
 
+
+## Inheritance
+
+So if you want multiple classes that are _kinda_ related to share similar values, you use inheritance.
+
+```python
+# main class
+class Animal:
+	def __init__(self, name, brain_power):
+		self.brain_power = brain_power
+
+# inherited class
+class Dog(Animal):
+	def __init__(self, name, brain_power, wl):
+		super().__init__(brain_power)
+		self.name = name
+		self.woof_length = wf
+		
+# "Dog" shares the same "brain_power" data from Animal BUT doesn't share the same name as animal
+```
+
+
+
 See [[Python]]
