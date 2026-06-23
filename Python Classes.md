@@ -106,6 +106,60 @@ class Dog(Animal):
 # "Dog" shares the same "brain_power" data from Animal BUT doesn't share the same name as animal
 ```
 
+## Polymorphism
+
+"poly" -> many
+"morph" -> form
+"polymorphism" -> many forms
+
+It's where child classes can have different stuff happen with methods named the same.
+
+Here's a good example with Animals.
+
+```python
+# normal animal class (parent class)
+class Animal:
+	def __init__(self, name: str, life_span: float) -> None:
+		self.name = name
+		self.life_span = float(name)
+	
+	def speak():
+		print("default animal speech")
+
+# child class
+class Dog(Animal):
+	def __init__(self, name: str, life_span: float) -> None:
+		super().__init__(name, life_span)
+	
+	def speak():
+		print("woof!") # overriding normal class
+
+class Cat(Animal):
+	def __init__(self, name: str, life_span: float) -> None:
+		super().__init__(name, life_span)
+	
+	def speak():
+		print("meow!") # overriding normal class
+```
+
+Because you can declare the same method to do different things, some cool stuff can come from it.
+
+```python
+# code continued ..
+
+animals [
+	Dog(),
+	Cat()
+]
+
+for animal in animals:
+	animal.speak()
+# would print
+# woof!
+# meow!
+```
+
+So that's cool.
 
 
 See [[Python]]
