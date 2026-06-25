@@ -26,3 +26,5 @@ age = 28
 print((lambda x: x * 2)(age))
 # 56
 ```
+
+See more: [[Python]], [[Higher Order Functions Python]]
