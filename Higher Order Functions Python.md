@@ -43,4 +43,4 @@ new_numbers = list(filter(lambda x: number_is_odd(x), numbers))
 
 ```
 
-See more [Python]
+See more [[Python]] , [[Python OOP]], [[Python Classes]]
