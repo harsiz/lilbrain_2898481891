@@ -43,4 +43,9 @@ new_numbers = list(filter(lambda x: number_is_odd(x), numbers))
 
 ```
 
+## Extra Related Definitions:
+
+`memoization` (not to be confused with _memorisation_) is a technique where you cache calculated results on functions before hand so they are faster to compute.
+
+
 See more [[Python]] , [[Python OOP]], [[Python Classes]]
