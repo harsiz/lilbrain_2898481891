@@ -15,3 +15,30 @@ Color = Enum("Color", ["RED", "BLUE", "GREEN"])
 print(Color.RED)
 # will print Color.RED
 ```
+
+### Match/Case
+(Unrelated to Enums but have nowhere to put it.)
+
+Cleaner way to put `if/else/elif` statements on fixed values (or _sum types_)
+
+```python
+from enum import Enum
+
+class AgeGrade(Enum):
+	COLLEGE = 16
+	UNIVERSITY = 18
+	JOB = 21
+
+def get_color(color: str, ageGrade: AgeGrade):
+	match (color, ageGrade):
+		case ("red", ageGrade.COLLEGE):
+			return 16
+		case ("red", ageGrade.UNIVERSITY):
+			return 18
+		case ("blue", ageGrade.JOB):
+			return 21
+		
+		
+		case _:
+			return 0
+```
