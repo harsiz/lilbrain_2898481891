@@ -12,4 +12,4 @@ Example: if there are `4` inputs and each operation takes 1 second, then it'd ta
 
 There are also stuff like `O(log n)` which is a good metric as logarithmic growth scales much slower than exponential (i.e `O(n^2)` and much less of factorial `O(n!)`).
 
-See also: [[Python]], [[Bitwise Operations]]
+See also: [[Python]], [[Bitwise Operations]], [[Performance]]
