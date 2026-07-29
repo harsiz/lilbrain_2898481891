@@ -56,6 +56,35 @@ int main() {
 ```
 
 
+## C Functions
 
+In C, functions HAVE to specify their type they return. Just like `int main() { }`
+
+### Void
+
+In C, the term `void` can be used within a function for 2 important reasons:
+
+1: Explicitly saying that a function takes no arguments.
+
+```c
+int my_function(void) {
+	return (int)(2 + 4)
+}
+```
+
+2: Functions that don't return anything (including not an exit code since it wouldn't be a `main()`.)
+
+```c
+void my_function(int x) {
+	printf("This is the %dth day of the week.", x);
+}
+```
+
+## Math With C
+
+- The `+` operator adds two numbers: `1 + 2` is `3`.
+- The `/` operator divides two numbers, however:
+    - if both numbers are integers, **integer division** is performed. The result will be an integer.
+    - if either number is a float, **floating point division** is performed. The result will be a float.
 
 See [[programming]], [[Backend]]
