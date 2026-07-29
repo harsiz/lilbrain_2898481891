@@ -129,3 +129,17 @@ int main() {
 ```
 
 The `.age` and `.name` is just a placeholder when you call it (e.g in that case `me.name`).
+
+## Pointers in C
+
+A pointer is literally just a variable that stores the address of a variable (which stores actual data held in that variable).
+
+It "points" to a variable. Also, Pointers start by `*` before the variable.
+
+E.g
+```c
+int cash = 250;
+int *cash_ptr = &cash;
+
+printf("The pointer to cash is: %p\n", *cash_ptr);
+```
