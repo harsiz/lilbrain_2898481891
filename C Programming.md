@@ -102,3 +102,29 @@ Logical operators let you combine multiple conditions in C. There are three main
 Hard to explain.
 
 `a > b ? 't' : 'f'` -> assign `t` or `f` depending on the outcome of the statement `a > b`
+
+## Structs (_classes-ish_) in C
+
+Structs are basically classes / objects without the ability to map methods (functions) to them.
+
+e.g:
+
+```c
+struct Person {
+	char *name;
+	int age;
+}
+```
+
+You can now do stuff with that, like assigning the struct to stuff:
+
+```c
+int main() {
+	struct Person me = {.name = "Harry", .age = 48};
+
+	printf("Hello there %s! You just told me you are %d years old!", me.name, me.age);
+	return 0;
+}
+```
+
+The `.age` and `.name` is just a placeholder when you call it (e.g in that case `me.name`).
