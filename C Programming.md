@@ -88,3 +88,11 @@ void my_function(int x) {
     - if either number is a float, **floating point division** is performed. The result will be a float.
 
 See [[programming]], [[Backend]]
+
+### Logical Operators C
+
+Logical operators let you combine multiple conditions in C. There are three main logical operators you'll use all the time:
+
+- `&&` – Logical `AND`: true if _both_ conditions are true
+- `||` – Logical `OR`: true if _either_ condition is true
+- `!` – Logical `NOT`: inverts a [[boolean]] value
