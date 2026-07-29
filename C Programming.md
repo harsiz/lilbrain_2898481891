@@ -96,3 +96,9 @@ Logical operators let you combine multiple conditions in C. There are three main
 - `&&` – Logical `AND`: true if _both_ conditions are true
 - `||` – Logical `OR`: true if _either_ condition is true
 - `!` – Logical `NOT`: inverts a [[boolean]] value
+
+### Ternary Operators C
+
+Hard to explain.
+
+`a > b ? 't' : 'f'` -> assign `t` or `f` depending on the outcome of the statement `a > b`
