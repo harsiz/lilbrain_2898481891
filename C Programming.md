@@ -41,6 +41,7 @@ __Common Ones Include__:
 `%c` -> character (singular `char`)
 `%f` -> floating point number (float)
 `%s` -> string (okay so _here_ C recognises that strings exist but not in variables 😂)
+`%p` -> pointer (or memory address). Along with that, use `&` before a variable to get the actual address instead of the variable value, e.g: `&name`
 
 E.g:
 
