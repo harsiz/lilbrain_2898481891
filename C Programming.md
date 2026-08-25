@@ -143,3 +143,22 @@ int *cash_ptr = &cash;
 
 printf("The pointer to cash is: %p\n", *cash_ptr);
 ```
+
+Pointers let you save memory and optimise performance since it directly points to another value instead of cloning it.
+
+To "dereference" a pointer (getting the value of what the pointer is pointing to), you just use the same `*` but place it before the val.
+
+```c
+int cash = 250;
+int *ptr_cash = &cash;
+
+int value = *ptr_cash // The asterisk HERE doesnt reference defining the pointer but _instead_ gets the VALUE of the address the pointer is pointing to, which in this case is just 250.
+```
+
+### Arrays In C
+
+Arrays are similar to  //..
+
+### C Strings
+
+`strcat(first, second)` combines the second string with the first and updates the first string.
