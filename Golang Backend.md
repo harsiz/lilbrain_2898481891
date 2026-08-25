@@ -66,3 +66,14 @@ switch day {
 		fmt.Printf("Unrecognized day")
 }
 ```
+
+## Functions
+
+Functions in Go start with the `func` keyword.
+
+```go
+func greeting(name string) string { // the final "string" is the return value type
+	var goStr string = fmt.Sprintf("Hello there %s, how are you?")
+	return goStr
+}
+```
