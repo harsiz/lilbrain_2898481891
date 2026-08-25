@@ -39,3 +39,30 @@ if age < 18 {
 	fmt.Printf("Your age: %d, is too young to view.", age)
 }
 ```
+
+### Switch/Case
+
+Similar to [[Python]]'s match case (and C's switch case)
+
+```go
+var day int
+
+switch day {
+	case 1:
+		fmt.Printf("First day")
+	case 2:
+		fmt.Printf("Second day")
+	case 3:
+		fallthrough // fallthrough just drops down to the next case
+	case 4:
+		fallthrough
+	case 5:
+		fmt.Printf("3 thru 5th day.")
+	case 6:
+		fallthrough
+	case 7:
+		fmt.Printf("6 thru 7th")
+	default:
+		fmt.Printf("Unrecognized day")
+}
+```
