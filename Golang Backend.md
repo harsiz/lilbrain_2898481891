@@ -79,3 +79,23 @@ func greeting(name string) string { // the final "string" is the return value ty
 ```
 
 With Go functions, you **MUST** include the full function signature (including the return type and the argument types.)
+
+## Structs
+
+Golang structs are similar to classes, they help group stuff together.
+
+```go
+type user struct {
+	name string
+	id int
+}
+```
+
+You can also use dot notation when assigning to a variable
+
+```go
+user1 := user{
+	name: "john_doe",
+	id: 256, // defining doesnt require commas, assigning does
+}
+```
