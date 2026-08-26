@@ -77,3 +77,5 @@ func greeting(name string) string { // the final "string" is the return value ty
 	return goStr
 }
 ```
+
+With Go functions, you **MUST** include the full function signature (including the return type and the argument types.)
