@@ -99,3 +99,37 @@ user1 := user{
 	id: 256, // defining doesnt require commas, assigning does
 }
 ```
+
+## Interfaces
+
+An interface is a contract that groups multiple structs that share identical method signatures.
+
+```go
+type car interface {
+	getSpeed() int
+}
+
+type bmw struct {
+	wheels int
+	horsePower int
+}
+
+type honda struct {
+	wheels int
+	horsePower int
+}
+
+type invalid_car struct{}
+
+func (b bmw) getSpeed() int {
+	return b.horsePower * (wheels + 1)
+}
+
+func (h honda) getSpeed() int {
+	return h.horsePower * (wheels + 4)
+}
+
+func (i invalid_struct) getSpeed() int {
+	return 0
+}
+```
