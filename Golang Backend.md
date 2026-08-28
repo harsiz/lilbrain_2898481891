@@ -133,3 +133,18 @@ func (i invalid_struct) getSpeed() int {
 	return 0
 }
 ```
+
+## Errors
+
+Go doesn't use a [[try/catch]] statement like [[Python]] or [[Javascript]], so instead, errors are literally just an interface that ships with functions if something goes wrong.
+
+```go
+func (u user) formatUser() (string, error) {
+	username, err = getUsername(u.id)
+
+	if err != nil { // this is the error
+		return "", err
+	}
+	return username+u.id, nil
+}
+```
