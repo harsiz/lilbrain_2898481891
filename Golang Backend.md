@@ -148,3 +148,7 @@ func (u user) formatUser() (string, error) {
 	return username+u.id, nil
 }
 ```
+
+## Arrays + Slices
+
+For the most part, you (I) will be using slices for 99% of the time as they are basically dynamic lists.
