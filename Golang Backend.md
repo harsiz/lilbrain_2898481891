@@ -152,3 +152,14 @@ func (u user) formatUser() (string, error) {
 ## Arrays + Slices
 
 For the most part, you (I) will be using slices for 99% of the time as they are basically dynamic lists.
+
+```go
+myArray := []int
+```
+
+You can use the `make` keyword: 
+
+```go
+// func make([]Type, length of array, capacity)
+mySlice := make([]int, 5, 10)
+```
