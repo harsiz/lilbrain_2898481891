@@ -163,3 +163,25 @@ You can use the `make` keyword:
 // func make([]Type, length of array, capacity)
 mySlice := make([]int, 5, 10)
 ```
+
+### Spread / Variadic
+
+**Variadic** functions are functions that can pass in an arbitrary number of arguments. It uses `...` to declare that it accepts one or many of `type`.
+
+```go
+// function that returns a new string with all the connected strings
+func connect(connectedStr ...string) string { // ... == variadic
+    var tString string = ""
+    for i := 0; i < len(connectedStr); i++ {
+        tString = tString + " " + connectedStr[i]
+    }
+    return tString
+}
+```
+
+**Spread** operator allows you to pass a slice into a variadic function. The syntax is just `...` right after the slice variable.
+
+```go
+sl := []string{"Hello", "My", "Name", "Is", "Harrison"}
+t := connect(sl...) // the ... here is after the variable, so it runs the connect() function, passing in the slice.
+```
