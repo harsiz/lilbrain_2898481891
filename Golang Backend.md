@@ -185,3 +185,103 @@ func connect(connectedStr ...string) string { // ... == variadic
 sl := []string{"Hello", "My", "Name", "Is", "Harrison"}
 t := connect(sl...) // the ... here is after the variable, so it runs the connect() function, passing in the slice.
 ```
+
+## Loops
+
+Loops are similar in C.
+
+```go
+
+for INITIAL; CONDITION; AFTER {
+	// do smth
+}
+```
+
+e.g:
+
+```go
+cash := 0
+
+for i := 0; i < 10; i++ {
+	cash += 1
+}
+
+fmt.Println(cash)
+```
+
+### For Each Loop (for x in range)
+
+For loops can also help with convenience looping over a slice.
+
+```go
+oses := []string{"iPhone", "Android", "Windows", "Mac", "Linux"} // a slice of Operating System names
+
+
+// for every operating system in "oses" slice, print the operating system
+for _, o := range oses {
+	fmt.Println(o)
+}
+```
+
+## Maps (Hashmaps)
+
+They are pretty much [[Dictionaries]] in Python, or hashmaps in other proglangs.
+
+To create one:
+
+`usernamePassword := make(map[string]string)`
+
+```go
+// usernamePassword["justharsiz"] = "password123"
+```
+
+To insert an element:
+
+`myMap[key] = element`
+
+To get an element:
+
+`element = myMap[key]`
+
+To delete an element:
+
+`delete(m, key)`
+
+To check if a key exists:
+
+`element, ok := myMap[key]`
+
+### If Exists (Maps)
+
+With maps, you can check if an object exists in a map in multiple ways, but each way uses different types of memory in code. For example:
+
+```go
+people := make(map[string]bool)
+
+if people[person] {
+	// person exists
+}
+```
+
+That can be kind of slow though, so instead it would be better to use an empty struct or bool.
+
+
+**Bool:**
+
+```go
+people := make(map[string]bool)
+
+if _, ok := people[person]; ok {
+	// person exists
+}
+```
+
+The boolean takes a single byte into memory just to check existence though, so you can go even more efficient with this using _empty structs_ that use no bytes in memory.
+
+```go
+people := make(map[string]struct{}{})
+
+if _, ok := people[person]; ok {
+	// person exists
+}
+```
