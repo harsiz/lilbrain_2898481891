@@ -285,3 +285,43 @@ if _, ok := people[person]; ok {
 	// person exists
 }
 ```
+
+## Generics
+
+The ability to make functions type-agnostic (can work with any type instead of rewriting for each individual supported type)
+
+```go
+func splitSlice[T any](s []T) ([]T, []T) {
+	l := len(s) / 2
+	return s[l:], s[:l]
+}
+```
+
+### Constraints
+
+When generics were released, a new way of writing interfaces was also released at the same time!
+
+Traditional interfaces in Go are **method-based**: a type satisfies an interface if it has the required methods.
+
+With generics, we also got **type-set (type-list) interfaces**. Instead of listing methods, they list the concrete (or underlying) types that are allowed. These are mostly used as **constraints on type parameters**.
+
+For example, to use `<` and `>` on a type parameter `T`, the compiler must know `T` is ordered. A type-list interface spells out exactly which types count as ordered:
+
+```go
+// Ordered matches any type that supports <, <=, >, and >=.
+type Ordered interface {
+    ~int | ~int8 | ~int16 | ~int32 | ~int64 |
+        ~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64 | ~uintptr |
+        ~float32 | ~float64 |
+        ~string
+}
+
+// Because T is constrained by Ordered, the compiler knows
+// that < is valid for any T used with this function.
+func Min[T Ordered](a, b T) T {
+    if a < b {
+        return a
+    }
+    return b
+}
+```
