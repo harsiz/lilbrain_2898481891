@@ -9,12 +9,6 @@ import "net/http"
 res, err := http.Get("https://api.whatever.com")
 ```
 
-
-
-
-
-
-
 ## JSON
 
 ### JSON decode
