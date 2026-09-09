@@ -1,3 +1,5 @@
+Part of [[Golang Backend]], Works well with [[Go HTTP]]
+
 Mutexes in Go let you lock access to data.
 This is so you can control what goroutines can access certain data and at specific times.
 
