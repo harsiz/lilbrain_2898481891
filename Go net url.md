@@ -7,3 +7,6 @@ parsedURL := url.Parse("https://example.com")
 
 hostName := parsedURL.Hostname()
 ```
+
+
+References: [[Golang Backend]], [[Go HTTP]], Part of [[Go Net]]
