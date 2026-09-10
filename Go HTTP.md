@@ -4,11 +4,14 @@ To call a get request in Golang, you first add the `net/http` library and then y
 
 ### GET REQUEST (Client)
 ```go
-package main
-
-import "net/http"
-
 res, err := http.Get("https://api.whatever.com")
+```
+
+### Specific GET REQUEST (CREATE)
+
+```go
+// THIS CREATES A REQUEST TEMPLATE, it doesnt bundle it like http.Get()
+res, err := http.NewRequest("GET", "https://api.whatever.com", nil)
 ```
 
 ## JSON
@@ -72,3 +75,41 @@ Most HTTP requests by default carry many headers such as:
 - Type of client (like Google Chrome / Firefox)
 - The OS (like windows or mac)
 - The preferred language (like English or Italian)
+#### Setting a header:
+
+```go
+// creating new request (not MAKING but creating the template)
+req, err := http.NewRequest("GET", "https://api.whatever.com", nil)
+if err != nil {
+	fmt.Println(err)
+	return
+}
+
+// setting a header on new request
+req.Header.Set("x-api-key", "api-123456")
+```
+
+#### Doing it (using http.Client{})
+
+```go
+// here is MAKING the request from the template
+// first make HTTP client
+client := http.Client{}
+res, err := client.Do(req) // client.Do(request)
+if err != nil {
+	fmt.Println(err)
+	return
+}
+defer res.Body.Close()
+```
+
+#### Reading and deleting a header from responses
+
+```go
+// reading
+header := res.Header.Get("x-api-key")
+fmt.Println("api key (dont actually print this you donut): ", header)
+
+// deleting
+res.Header.Del("x-api-key")
+```
