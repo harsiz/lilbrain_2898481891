@@ -1,19 +1,4 @@
 Part of [[Golang Backend]]
-
-To call a get request in Golang, you first add the `net/http` library and then you:
-
-### GET REQUEST (Client)
-```go
-res, err := http.Get("https://api.whatever.com")
-```
-
-### Specific GET REQUEST (CREATE)
-
-```go
-// THIS CREATES A REQUEST TEMPLATE, it doesnt bundle it like http.Get()
-res, err := http.NewRequest("GET", "https://api.whatever.com", nil)
-```
-
 ## JSON
 
 ### JSON decode
@@ -24,7 +9,7 @@ The `Decode` method of `json.Decoder` streams data from an [`io.Reader`](ht
 
 Using a `json.Decoder` can be more memory-efficient because it doesn't load all the data into memory at once. `json.Unmarshal` is ideal for small JSON data you already have in memory. When dealing with HTTP requests and responses, you will likely use `json.Decoder` since it works directly with an `io.Reader`.
 
-### JSON Decoding (Decoder )
+### JSON Decoding (Decoder)
 This is for http requests. This is an example:
 
 ```go
@@ -64,6 +49,24 @@ func main() {
 }
 ```
 
+
+### JSON Encoding (Struct to JSON)
+
+```go
+type User struct {
+	ID int `json:"id"`
+	Username string `json:"username"`
+	HashedPassword string `json:"hashedPassword"`
+}
+
+MyUser := User{
+	ID: 104,
+	Username: "johndoe",
+	HashedPassword: "784aa23f9e3c93cb036706f99896e032"
+}
+
+jsonData, err := json.Marshal(MyUser)
+```
 
 ## HTTP Options / Settings
 
@@ -113,3 +116,29 @@ fmt.Println("api key (dont actually print this you donut): ", header)
 // deleting
 res.Header.Del("x-api-key")
 ```
+
+## HTTP Methods
+
+#### Get:
+
+To call a get request in Golang, you first add the `net/http` library and then you:
+```go
+// params: url (string)
+res, err := http.Get("https://api.whatever.com")
+```
+ Specific GET REQUEST (CREATE)
+
+```go
+// THIS CREATES A REQUEST TEMPLATE, it doesnt bundle it like http.Get()
+res, err := http.NewRequest("GET", "https://api.whatever.com", nil)
+```
+
+#### Post:
+
+Posting also comes with a standard (much like __GET__) request feature:
+
+```go
+// params: url (string), content-type (string), body (io.stream)
+res, err := http.Post("https://api.whatever.com", "application/json", bytes.NewBuffer(JSON)) // json goes there
+```
+
