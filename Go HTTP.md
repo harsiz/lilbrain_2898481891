@@ -142,3 +142,7 @@ Posting also comes with a standard (much like __GET__) request feature:
 res, err := http.Post("https://api.whatever.com", "application/json", bytes.NewBuffer(JSON)) // json goes there
 ```
 
+#### Put:
+
+Put == Update.
+
