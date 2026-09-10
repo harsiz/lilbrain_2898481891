@@ -60,3 +60,15 @@ func main() {
 	fmt.Printf("Bitcoin Price: %.2f\nSolana Price: %.2f\n", a.Bitcoin.Usd, a.Solana.Usd)
 }
 ```
+
+
+## HTTP Options / Settings
+
+### HTTP headers
+
+HTTP headers allow clients & servers to pass additional info with each request / response. They are __case-insensitive__ key-value pairs that pass additional metadata about the req/resp.
+
+Most HTTP requests by default carry many headers such as:
+- Type of client (like Google Chrome / Firefox)
+- The OS (like windows or mac)
+- The preferred language (like English or Italian)
